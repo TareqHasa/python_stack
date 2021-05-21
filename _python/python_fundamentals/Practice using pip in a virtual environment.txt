@@ -1,0 +1,172 @@
+Microsoft Windows [Version 10.0.19042.631]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\Alienware>cd desktop
+
+C:\Users\Alienware\Desktop>cd python
+
+C:\Users\Alienware\Desktop\python>cd python_stack
+
+C:\Users\Alienware\Desktop\python\python_stack>cd my_environments
+
+C:\Users\Alienware\Desktop\python\python_stack\my_environments>python -m venv py3Env
+
+C:\Users\Alienware\Desktop\python\python_stack\my_environments>call py3Env\Scripts\activate
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+pip (9.0.1)
+setuptools (28.8.0)
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip3
+
+Usage:
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be
+                              used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be
+                              used up to 3 times (corresponding to WARNING,
+                              ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should
+                              attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does
+                              not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file
+                              containing the private key and the certificate
+                              in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>install
+'install' is not recognized as an internal or external command,
+operable program or batch file.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip3 list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+pip (9.0.1)
+setuptools (28.8.0)
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip3 install digango
+Collecting digango
+  Could not find a version that satisfies the requirement digango (from versions: )
+No matching distribution found for digango
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip3 instll Django
+ERROR: unknown command "instll" - maybe you meant "install"
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip3 install Django
+Collecting Django
+  Downloading https://files.pythonhosted.org/packages/cf/91/e23103dd21fa1b5c1fefb65c4d403107b10bf450ee6955621169fcc86db9/Django-3.2.2-py3-none-any.whl (7.9MB)
+    100% |████████████████████████████████| 7.9MB 25kB/s
+Collecting pytz (from Django)
+  Downloading https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl (510kB)
+    100% |████████████████████████████████| 512kB 71kB/s
+Collecting asgiref<4,>=3.3.2 (from Django)
+  Downloading https://files.pythonhosted.org/packages/17/8b/05e225d11154b8f5358e6a6d277679c9741ec0339d1e451c9cef687a9170/asgiref-3.3.4-py3-none-any.whl
+Collecting sqlparse>=0.2.2 (from Django)
+  Downloading https://files.pythonhosted.org/packages/14/05/6e8eb62ca685b10e34051a80d7ea94b7137369d8c0be5c3b9d9b6e3f5dae/sqlparse-0.4.1-py3-none-any.whl (42kB)
+    100% |████████████████████████████████| 51kB 74kB/s
+Collecting typing-extensions; python_version < "3.8" (from asgiref<4,>=3.3.2->Django)
+  Downloading https://files.pythonhosted.org/packages/2e/35/6c4fff5ab443b57116cb1aad46421fb719bed2825664e8fe77d66d99bcbc/typing_extensions-3.10.0.0-py3-none-any.whl
+Installing collected packages: pytz, typing-extensions, asgiref, sqlparse, Django
+Successfully installed Django-3.2.2 asgiref-3.3.4 pytz-2021.1 sqlparse-0.4.1 typing-extensions-3.10.0.0
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+asgiref (3.3.4)
+Django (3.2.2)
+pip (9.0.1)
+pytz (2021.1)
+setuptools (28.8.0)
+sqlparse (0.4.1)
+typing-extensions (3.10.0.0)
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip freez
+ERROR: unknown command "freez" - maybe you meant "freeze"
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip freez
+ERROR: unknown command "freez" - maybe you meant "freeze"
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip freeze
+asgiref==3.3.4
+Django==3.2.2
+pytz==2021.1
+sqlparse==0.4.1
+typing-extensions==3.10.0.0
+You are using pip version 9.0.1, however version 21.1.1 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>python -m pip install --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/cd/6f/43037c7bcc8bd8ba7c9074256b1a11596daa15555808ec748048c1507f08/pip-21.1.1-py3-none-any.whl (1.5MB)
+    100% |████████████████████████████████| 1.6MB 26kB/s
+Installing collected packages: pip
+  Found existing installation: pip 9.0.1
+    Uninstalling pip-9.0.1:
+      Successfully uninstalled pip-9.0.1
+Successfully installed pip-21.1.1
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip list
+Package           Version
+----------------- --------
+asgiref           3.3.4
+Django            3.2.2
+pip               21.1.1
+pytz              2021.1
+setuptools        28.8.0
+sqlparse          0.4.1
+typing-extensions 3.10.0.0
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>pip show django
+Name: Django
+Version: 3.2.2
+Summary: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+Home-page: https://www.djangoproject.com/
+Author: Django Software Foundation
+Author-email: foundation@djangoproject.com
+License: BSD-3-Clause
+Location: c:\users\alienware\desktop\python\python_stack\my_environments\py3env\lib\site-packages
+Requires: sqlparse, asgiref, pytz
+Required-by:
+
+(py3Env) C:\Users\Alienware\Desktop\python\python_stack\my_environments>
