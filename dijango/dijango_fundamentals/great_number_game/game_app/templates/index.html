@@ -13,14 +13,11 @@
         <h1>Welcom to the Great Number Game!</h1>
         <p>I am thinking of a number between 1 and 100</p>
         <p>Take a guess!</p>
-        <div class="result">
-            <p>{{ request.session.number }}</p>
-        </div>
-
-        <form action="/" method="POST">
+        <form action="/guess" method="POST" style="background-color: {{color}};">
             {% csrf_token %}
-            <input type="number" name="number_from_user" value="number">
-            <button type="submit">submit</button>
+            <p>{{request.session.string}}</p>
+            <input type="number" name="number_from_user"><br>
+            <input type="submit" value="Submit" name="submit">
 
         </form>
     </main>
