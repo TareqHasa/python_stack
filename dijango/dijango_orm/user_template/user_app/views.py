@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render,HttpResponse
-from .models import User
+from . models import User
 
 def index(request):
     context={

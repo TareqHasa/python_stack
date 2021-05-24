@@ -1,0 +1,25 @@
+1
+from dojo_app.models import *
+
+2
+Dojo.objects.create(name="Samurai",city="Nablus",state="Palestine")
+Dojo.objects.create(name="Karate",city="Jineen",state="Palestine")
+Dojo.objects.create(name="Naruto",city="blus",state="Sumalia")
+
+3
+c=Dojo.objects.get(id=1)
+c.delete
+c=Dojo.objects.get(id=2)
+c.delete
+c=Dojo.objects.get(id=3)
+c.delete
+
+4
+Dojo.objects.create(name="Samurai",city="Nablus",state="Palestine")
+Dojo.objects.create(name="Karate",city="Jineen",state="Palestine")
+Dojo.objects.create(name="Naruto",city="blus",state="Sumalia")
+
+5
+ninjas=Ninja.objects.create(first_name="Tareq",last_name="Hasan",dojo=Dojo.objects.get(id=1))
+ninjas=Ninja.objects.create(first_name="Yuosef",last_name="Swilem",dojo=Dojo.objects.get(id=1))
+ninjas=Ninja.objects.create(first_name="Mohammad",last_name="Kitana",dojo=Dojo.objects.get(id=1))
