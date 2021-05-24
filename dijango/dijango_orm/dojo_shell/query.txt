@@ -23,3 +23,25 @@ Dojo.objects.create(name="Naruto",city="blus",state="Sumalia")
 ninjas=Ninja.objects.create(first_name="Tareq",last_name="Hasan",dojo=Dojo.objects.get(id=1))
 ninjas=Ninja.objects.create(first_name="Yuosef",last_name="Swilem",dojo=Dojo.objects.get(id=1))
 ninjas=Ninja.objects.create(first_name="Mohammad",last_name="Kitana",dojo=Dojo.objects.get(id=1))
+
+6
+ninjas=Ninja.objects.create(first_name="Tareq 2",last_name="Hasan 2",dojo=Dojo.objects.get(id=2))
+ninjas=Ninja.objects.create(first_name="Yuosef 2",last_name="Swilem 2",dojo=Dojo.objects.get(id=2))
+ninjas=Ninja.objects.create(first_name="Mohammad 2",last_name="Kitana 2",dojo=Dojo.objects.get(id=2))
+
+7
+ninjas=Ninja.objects.create(first_name="Tareq 3",last_name="Hasan 3",dojo=Dojo.objects.get(id=3))
+ninjas=Ninja.objects.create(first_name="Yuosef 3",last_name="Swilem 3",dojo=Dojo.objects.get(id=3))
+ninjas=Ninja.objects.create(first_name="Mohammad 3",last_name="Kitana 3",dojo=Dojo.objects.get(id=3))
+
+8
+ninjas = Ninja.objects.filter(dojo=Dojo.objects.get(id=1))
+ninjas.values().all()
+
+
+9
+c=Ninja.objects.filter(dojo=Dojo.objects.get(id=3))
+c.values().all()
+
+10
+Dojo.objects.create(name="Hulk",city="red",state="ct",desc="new dojo")
