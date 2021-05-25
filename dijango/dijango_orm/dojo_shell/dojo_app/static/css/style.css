@@ -1,0 +1,12 @@
+.cont{
+    display: flex;
+    justify-content: space-evenly;
+}
+form{
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+}
+.show{
+    text-align: center;
+}
