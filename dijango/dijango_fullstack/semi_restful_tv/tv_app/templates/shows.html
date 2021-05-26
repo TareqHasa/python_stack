@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Shows</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Network</td>
+            <td>Released Date</td>
+            <td>Actions</td>
+        </tr>
+        <tr>{% for i in shoows %}
+            <td>{{i.id}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.network}}</td>
+            <td>{{i.released_date}}</td>
+            <td><a href="/shows/{{i.id}}">Show</a> | <a href="/shows/{{i.id}}/edit">Edit</a> | <a href="#">Delete</a></form></td>
+        </tr>{% endfor %}
+    </table>
+    <br>
+    <br>
+    <a href="/shows/new">Add a New Show</a>
+</body>
+</html>

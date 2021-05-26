@@ -1,0 +1,18 @@
+h1 {
+  background-color: red;
+}
+.mid {
+  display: flex;
+}
+.mid1 {
+  margin-right: 20px;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

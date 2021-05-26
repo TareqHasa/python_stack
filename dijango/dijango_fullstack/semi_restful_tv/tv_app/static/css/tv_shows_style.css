@@ -1,0 +1,16 @@
+h1 {
+  background-color: red;
+}
+.marg {
+  margin-top: 100px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
