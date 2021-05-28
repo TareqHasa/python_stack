@@ -1,8 +1,8 @@
-from django.shortcuts import render,redirect,HttpResponse
-from . models import *
+from django.shortcuts import render, redirect
+from .models import *
 
-def root(request):
-    return redirect ('/shows')
+# Create your views here.
+
 
 def index(request):
     context = {
@@ -25,16 +25,17 @@ def tv_shows(request, id):
 
 def tv_shows_edit(request, id):
     context = {
-        'row2': Show.objects.get(id=id)
+        'row': Show.objects.get(id=id)
     }
     return render(request, "tv_shows_edit.html", context)
 
 
 def create_show(request):
+
     Show.objects.create(
-        title=request.POST['title'], network=request.POST['network'], released_date=request.POST['released_date'], 
-        description=request.POST['desc'])
-    return redirect("/shows/<int:id>")
+        title=request.POST['title'], network=request.POST['network'], released_date=request.POST['released_date'], description=request.POST['desc'])
+    x = Show.objects.last()
+    return redirect("/shows/"+str(x.id))
 
 
 def update_show(request, id):
@@ -43,9 +44,13 @@ def update_show(request, id):
     c.title = request.POST['title']
     c.released_date = request.POST['released_date']
     c.network = request.POST['network']
-    c.description = request.POST['description']
+    c.description = request.POST['desc']
     c.save()
-    return redirect("/shows/<int:id>")
+    y = id
+    return redirect(f"/shows/{y}")
 
-# def destroy(request):
-#     c=Show.objects.get(id=)
+
+def delete(request, id):
+    x = Show.objects.get(id=id)
+    x.delete()
+    return redirect("/shows")

@@ -11,10 +11,10 @@
 <body>
     <div class="contanier">
         <div class="link">
-            <h1>Edit Show {{row2.id}}</h1>
+            <h1>Edit Show {{row.id}}</h1>
             <a href="/shows">Go Back</a>    
         </div>
-        <form action="shows/{{id}}/update" method="POST">
+        <form action="/update_show/{{row.id}}" method="POST">
                 {% csrf_token %}
             <label for="title">Title</label>
             <br>
@@ -38,7 +38,7 @@
             <input type="submit" value="Update">
             <br>    
         </form>   
-        <a href="/shows/{{id}}">Go to Show</a> 
+        <a href="/shows/{{row.id}}">Go to Show</a> 
     </div>
     
 </body>

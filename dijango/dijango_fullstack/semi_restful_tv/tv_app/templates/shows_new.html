@@ -15,7 +15,7 @@
             <a href="/shows">Go Back</a>    
         </div>
         <form action="/create_show" method="POST">
-            {% csrf_token %}
+                {% csrf_token %}
             <label for="title">Title</label>
             <br>
             <input type="text" id="title" name="title">
