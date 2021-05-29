@@ -1,0 +1,12 @@
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+.le{
+    width: 40em;
+}
+.ma{
+    display: flex;
+    justify-content: space-around;
+}
