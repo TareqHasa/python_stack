@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-
-# Create your views here.
-
+from django.contrib import messages
 
 def index(request):
     context = {
@@ -31,23 +29,33 @@ def tv_shows_edit(request, id):
 
 
 def create_show(request):
-
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/shows/new')
     Show.objects.create(
-        title=request.POST['title'], network=request.POST['network'], released_date=request.POST['released_date'], description=request.POST['desc'])
+        title=request.POST['title'], network=request.POST['network'], released_date=request.POST['released_date'], 
+        description=request.POST['desc'])
     x = Show.objects.last()
     return redirect("/shows/"+str(x.id))
 
 
 def update_show(request, id):
-
-    c = Show.objects.get(id=id)
-    c.title = request.POST['title']
-    c.released_date = request.POST['released_date']
-    c.network = request.POST['network']
-    c.description = request.POST['desc']
-    c.save()
-    y = id
-    return redirect(f"/shows/{y}")
+    if "update" in request.POST:
+        errors = Show.objects.basic_validator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect('/shows/'+str(id)+"/edit")
+        else:
+            c = Show.objects.get(id=id)
+            c.title = request.POST['title']
+            c.released_date = request.POST['released_date']
+            c.network = request.POST['network']
+            c.description = request.POST['desc']
+            c.save()
+            return redirect("/shows/"+str(id))
 
 
 def delete(request, id):

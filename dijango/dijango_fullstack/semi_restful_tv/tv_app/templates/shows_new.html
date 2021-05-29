@@ -11,6 +11,13 @@
 <body>
     <div class="contanier">
         <div class="link">
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
             <h1>Add a New Show</h1>
             <a href="/shows">Go Back</a>    
         </div>
@@ -18,17 +25,17 @@
                 {% csrf_token %}
             <label for="title">Title</label>
             <br>
-            <input type="text" id="title" name="title">
+            <input type="text" id="title" name="title" required>
             <div class='mid'>
                 <div class="mid1">
                     <label for="network">Network</label>
                     <br>
-                    <input type="text" id="network" name="network">
+                    <input type="text" id="network" name="network" required>
                 </div>
                 <div class="mid2">
                     <label for="released_date">Released Date</label>
                     <br>
-                    <input type="date" id="released_date" name="released_date">
+                    <input type="date" id="released_date" name="released_date" required>
                 </div>
             </div>  
             <label for="desc">Description</label>
