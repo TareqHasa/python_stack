@@ -39,13 +39,14 @@ def regester(request):
             User.objects.create(first_name=first_name,last_name=last_name,email=email,pasword=hash1)
             if 'name' not in request.session:
                 request.session['name']=first_name
-                messages.success(request, " successfully registerd")
                 return redirect('/success')
         return redirect('/')
             
 
 def success(request):
+    if 'name' in request.session:
         return render(request,'success.html')
+    return redirect('/')
 
 def logout(request):
     del request.session['name']
